@@ -1,7 +1,6 @@
 .input {
-  padding-right: 8px;
-  padding-left: 8px;
-  height: 36px;
+  padding: 8px;
+  height: 40px;
   width: 100%;
   //font-family: $base-font-family;
   font-size: 14px;
@@ -35,7 +34,7 @@
     border-color: darken($gray, 10%);
   }
 
-  .form-field--invalid & {
+  .form__field--invalid & {
     border-color: $red;
 
     &:hover,

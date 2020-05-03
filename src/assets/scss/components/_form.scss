@@ -1,10 +1,30 @@
 .form {
   position: relative;
-  min-height: 360px;
   width: 100%;
-  overflow-x: hidden;
 
-  @include media-breakpoint-up(lg) {
+  &__field {
+    position: relative;
+    margin-bottom: 12px;
 
+    &--button {
+      margin-top: 25px;
+    }
+  }
+
+  &__label {
+    margin-bottom: 5px;
+    display: block;
+    font-family: $font-family;
+    font-size: 14px;
+    line-height: 22px;
+    color: rgba($gray-dark, 0.8);
+  }
+
+  &__validation {
+    position: absolute;
+    bottom: -16px;
+    right: 0;
+    font-size: 12px;
+    color: $red;
   }
 }

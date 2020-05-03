@@ -1,0 +1,31 @@
+@import 'src/assets/scss/core/functions';
+@import "src/assets/scss/core/breakpoints";
+@import "src/variables";
+@import "src/assets/scss/settings";
+
+:host {
+  display: block;
+  height: 100%;
+}
+
+.login {
+  height: inherit;
+  background-color: $white;
+
+  &__container {
+    height: inherit;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  &__title {
+    margin-top: 0;
+    margin-bottom: 25px;
+    font-family: $font-family;
+    font-size: 30px;
+    line-height: 34px;
+    color: $gray-dark;
+    text-align: center;
+  }
+}
