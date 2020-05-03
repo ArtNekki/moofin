@@ -1,0 +1,49 @@
+@mixin button($padding-y, $padding-x, $font-size, $border-radius) {
+  padding: $padding-y $padding-x;
+  font-size: $font-size;
+  border-radius: $border-radius;
+}
+
+.btn {
+  position: relative;
+  display: inline-block;
+  font-family: $font-family;
+  font-weight: 700;
+  color: $white;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  white-space: nowrap;
+  vertical-align: middle;
+  background-color: $yellow;
+  border: 1px solid transparent;
+  transition: transform 0.3s ease-in-out;
+  cursor: pointer;
+
+  &:hover {
+    background-color: lighten($yellow, 3%);
+    transform: translateY(-3px);
+  }
+
+  &:focus {
+    outline: none;
+  }
+
+  &:disabled {
+    color: rgba($black, 0.2);
+    background-color: $gray !important;
+    cursor: not-allowed;
+
+    &:hover {
+      transform: none;
+    }
+  }
+
+  &--xs {
+    @include button(0.5em, 1em, 0.75rem, 1.5em);
+  }
+
+  &--sm {
+    @include button(1em, 2em, 0.75rem, 1.75em);
+  }
+}

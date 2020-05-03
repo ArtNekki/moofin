@@ -1,0 +1,50 @@
+.input {
+  padding-right: 8px;
+  padding-left: 8px;
+  height: 36px;
+  width: 100%;
+  //font-family: $base-font-family;
+  font-size: 14px;
+  line-height: 22px;
+  color: rgba($gray-dark, 0.5);
+  background-color: $white;
+  border-radius: 5px;
+  border: 1px solid $gray;
+  appearance: none;
+  outline: none;
+
+  &--date {
+    //background-image: url('~assets/img/svg/calendar.svg');
+    background-repeat: no-repeat;
+    background-position: calc(100% - 10px) calc(50% - 1px);
+    background-size: 20px auto;
+
+    &::-webkit-inner-spin-button,
+    &::-webkit-calendar-picker-indicator {
+      display: none;
+      -webkit-appearance: none;
+    }
+  }
+
+  @include media-breakpoint-up(lg) {
+    border-radius: 5px;
+  }
+
+  &:hover:not(&:disabled),
+  &:focus {
+    border-color: darken($gray, 10%);
+  }
+
+  .form-field--invalid & {
+    border-color: $red;
+
+    &:hover,
+    &:focus {
+      border-color: $red;
+    }
+  }
+}
+
+textarea.input {
+  height: auto;
+}

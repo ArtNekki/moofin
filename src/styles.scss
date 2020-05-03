@@ -1,1 +1,52 @@
 /* You can add global styles to this file, and also import other style files */
+/* You can add utils styles to this file, and also import other style files */
+
+@charset 'utf-8';
+
+//core
+@import 'assets/scss/core/functions';
+@import 'assets/scss/core/mixins';
+@import 'assets/scss/core/utils';
+@import 'assets/scss/core/breakpoints';
+@import 'assets/scss/core/animations';
+
+//settings
+@import 'variables';
+@import 'assets/scss/settings';
+
+//libs
+@import 'assets/scss/core/libs';
+
+// @import 'global/typography';
+@import 'assets/scss/core/fonts';
+
+//utils
+@import 'assets/scss/utils';
+
+//grid
+@import "assets/scss/grid-framework/grid-framework";
+@import "assets/scss/grid-framework/grid";
+@import 'assets/scss/grid';
+
+//common
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  font-family: $font-family;
+  font-size: 16px;
+  line-height: 19px;
+}
+
+//components
+@import "assets/scss/components/link";
+@import "assets/scss/components/input";
+@import "assets/scss/components/btn";
+@import "assets/scss/components/form";
+@import "assets/scss/components/ng-select";
+@import "assets/scss/components/table";

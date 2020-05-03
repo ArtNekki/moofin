@@ -1,0 +1,16 @@
+.link {
+  font-size: 14px;
+  line-height: 14px;
+  color: $gray-dark;
+  text-decoration: none;
+
+  &:hover {
+    border-color: transparent;
+    color: $yellow;
+  }
+
+  &:active {
+    color: rgba($gray, 0.7);
+  }
+}
+

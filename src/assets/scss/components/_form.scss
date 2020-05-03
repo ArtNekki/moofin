@@ -1,0 +1,10 @@
+.form {
+  position: relative;
+  min-height: 360px;
+  width: 100%;
+  overflow-x: hidden;
+
+  @include media-breakpoint-up(lg) {
+
+  }
+}
