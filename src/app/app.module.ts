@@ -4,15 +4,25 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MainLayoutComponent } from './layouts/main-layout/main-layout.component';
-import { LoginViewComponent } from './views/login-view/login-view.component';
-import { CommonQuestionsComponent } from './views/common-questions/common-questions.component';
+import { ServicesComponent } from './views/services/services.component';
+import { PostsComponent } from './views/posts/posts.component';
+import { NotificationsComponent } from './views/notifications/notifications.component';
+import { DialogsComponent } from './views/dialogs/dialogs.component';
+import { LoginComponent } from './views/login/login.component';
+import { HelpComponent } from './views/help/help.component';
+import { ProfileComponent } from './views/profile/profile.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MainLayoutComponent,
-    LoginViewComponent,
-    CommonQuestionsComponent
+    ServicesComponent,
+    PostsComponent,
+    NotificationsComponent,
+    DialogsComponent,
+    LoginComponent,
+    HelpComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,
