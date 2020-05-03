@@ -31,8 +31,8 @@
   }
 
   &:disabled {
-    color: rgba($black, 0.2);
-    background-color: $gray !important;
+    color: $white;
+    background-color: lighten($gray, 10%);
     cursor: not-allowed;
 
     &:hover {

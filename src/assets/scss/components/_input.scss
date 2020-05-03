@@ -29,7 +29,7 @@
     border-radius: 5px;
   }
 
-  &:hover:not(&:disabled),
+  &:hover,
   &:focus {
     border-color: darken($gray, 10%);
   }
