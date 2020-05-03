@@ -1,0 +1,14 @@
+<header class="header">
+  <div class="header__container container">
+    <a href="#" class="header__logo">
+<!--      <svg-icon width="35" height="35" src="/assets/img/svg/party.svg"></svg-icon>-->
+    </a>
+    <button type="button" class="header__nav-open" (click)="setNavState(NavState.VISIBLE)">
+      <span></span>
+    </button>
+  </div>
+  <nav class="header__nav" [@nav]="navCurrentState">
+    <button type="button" class="header__nav-close" (click)="setNavState(NavState.HIDDEN)">&times;</button>
+    <app-nav></app-nav>
+  </nav>
+</header>

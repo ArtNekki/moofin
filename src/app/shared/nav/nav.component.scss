@@ -1,0 +1,38 @@
+@import 'src/assets/scss/core/functions';
+@import "src/assets/scss/core/breakpoints";
+@import "src/variables";
+@import "src/assets/scss/settings";
+
+.nav {
+  margin: 0;
+  margin-top: 70px;
+  padding: 0;
+  list-style: none;
+
+  &__item {
+    background-color: $secondary-theme;
+    border-bottom: 1px dashed $main-theme;
+    overflow: hidden;
+
+    &:first-child {
+      border-top: 1px dashed $main-theme;
+    }
+  }
+
+  &__link {
+    padding: 15px 15px;
+    display: block;
+    font-family: $font-family;
+    font-size: 12px;
+    line-height: 17px;
+    color: $white;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: all 0.3s ease-in;
+
+    &:hover,
+    &:active {
+      transform: translateX(15px);
+    }
+  }
+}

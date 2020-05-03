@@ -1,5 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import {CommonModule} from '@angular/common';
+// import {AngularSvgIconModule} from 'angular-svg-icon';
+
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -12,10 +15,13 @@ import { LoginComponent } from './pages/login/login.component';
 import { HelpComponent } from './pages/help/help.component';
 import { ProfileComponent } from './pages/profile/profile.component';
 import {ReactiveFormsModule} from '@angular/forms';
+import { HeaderComponent } from './shared/header/header.component';
 
 // mask
 import { NgxMaskModule, IConfig } from 'ngx-mask';
-export let options: Partial<IConfig> | (() => Partial<IConfig>);
+import { NavComponent } from './shared/nav/nav.component';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+export const options: Partial<IConfig> | (() => Partial<IConfig>) = {};
 
 
 @NgModule({
@@ -28,13 +34,18 @@ export let options: Partial<IConfig> | (() => Partial<IConfig>);
     DialogsComponent,
     LoginComponent,
     HelpComponent,
-    ProfileComponent
+    ProfileComponent,
+    HeaderComponent,
+    NavComponent
   ],
   imports: [
+    CommonModule,
     BrowserModule,
+    BrowserAnimationsModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    NgxMaskModule.forRoot(options)
+    NgxMaskModule.forRoot(options),
+    // AngularSvgIconModule
   ],
   providers: [],
   bootstrap: [AppComponent]
