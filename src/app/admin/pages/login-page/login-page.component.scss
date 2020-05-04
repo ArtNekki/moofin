@@ -1,0 +1,17 @@
+@import 'src/assets/scss/core/functions';
+@import "src/assets/scss/core/breakpoints";
+@import "src/variables";
+@import "src/assets/scss/settings";
+
+.login-page {
+
+  &__title {
+    margin-top: 50px;
+    margin-bottom: 40px;
+    font-family: $font-family;
+    font-size: 30px;
+    line-height: 35px;
+    color: rgba($gray-dark, 0.8);
+    text-align: center;
+  }
+}

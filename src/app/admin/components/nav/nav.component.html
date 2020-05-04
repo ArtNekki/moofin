@@ -1,0 +1,24 @@
+<div class="nav">
+  <ul class="nav__list">
+    <li class="nav__item">
+      <a [routerLink]="['/admin', 'building']" class="nav__link">Дом</a>
+    </li>
+    <li class="nav__item">
+      <a  [routerLink]="['/admin', 'people']" href="#" class="nav__link">Жильцы</a>
+    </li>
+    <li class="nav__item">
+      <a [routerLink]="['/admin', 'services']" class="nav__link">Сервисы</a>
+    </li>
+    <li class="nav__item">
+      <a [routerLink]="['/admin', 'posts']" class="nav__link">Посты</a>
+    </li>
+  </ul>
+  <div class="nav__profile">
+<!--    <div class="nav__item">-->
+<!--      <a href="#" class="nav__link">Петр Петров</a>-->
+<!--    </div>-->
+    <div class="nav__item">
+      <a class="nav__link" (click)="logout($event)">Выход</a>
+    </div>
+  </div>
+</div>

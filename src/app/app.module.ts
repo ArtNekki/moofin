@@ -26,6 +26,7 @@ import { AlertComponent } from './components/alert/alert.component';
 import {AlertService} from './core/services/alert.service';
 import {UserAuthGuard} from './core/user-auth.guard';
 import {HttpClientModule} from '@angular/common/http';
+import {SharedModule} from './shared.module';
 
 
 @NgModule({
@@ -50,6 +51,7 @@ import {HttpClientModule} from '@angular/common/http';
     BrowserAnimationsModule,
     AppRoutingModule,
     ReactiveFormsModule,
+    // SharedModule,
     InlineSVGModule.forRoot(),
     NgxMaskModule.forRoot(options),
   ],

@@ -1,0 +1,40 @@
+@import 'src/assets/scss/core/functions';
+@import "src/assets/scss/core/breakpoints";
+@import "src/variables";
+@import "src/assets/scss/settings";
+
+.nav {
+  display: flex;
+  align-items: center;
+  flex-grow: 1;
+
+  &__list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+  }
+
+  &__item {
+    margin: 0 10px;
+    display: inline-block;
+  }
+
+  &__link {
+    font-family: $font-family;
+    font-size: 14px;
+    line-height: 16px;
+    color: $white;
+    text-decoration: none;
+    cursor: pointer;
+
+    &:hover,
+    &:active {
+      opacity: 0.7;
+    }
+  }
+
+  &__profile {
+    margin-left: 60px;
+  }
+}

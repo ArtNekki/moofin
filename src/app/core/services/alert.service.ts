@@ -11,7 +11,6 @@ export interface Alert {
 
 @Injectable()
 
-
 export class AlertService {
   public alert$ = new Subject<Alert>();
 
