@@ -15,6 +15,7 @@ on:
 
 env:
   IMAGE_NAME: fincase-unicorn-team/dom-app/web
+  VERSION: latest
 
 jobs:
   # Push image to GitHub Packages.
@@ -27,7 +28,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - name: Push image
+      - name: Set version
         run: |
           # Strip git ref prefix from version
           VERSION=$(echo "${{ github.ref }}" | sed -e 's,.*/\(.*\),\1,')
@@ -38,13 +39,16 @@ jobs:
           # Use Docker `latest` tag convention
           [ "$VERSION" == "master" ] && VERSION=latest
           
-          echo IMAGE_ID=$IMAGE_ID
+          echo "::set-env name=action_state::yellow"
+          
+          echo IMAGE_NAME=$IMAGE_NAME
           echo VERSION=$VERSION
-
-      - uses: whoan/docker-build-with-cache-action@v5
+      
+      - name: Push image
+        uses: whoan/docker-build-with-cache-action@v5
         with:
-          image_name: $IMAGE_NAME
-          image_tag: $VERSION
+          image_name: ${{ env.IMAGE_NAME }}
+          image_tag: ${{ env.VERSION }}
           registry: docker.pkg.github.com
           username: ${{ github.actor }}
           password: "${{ secrets.GITHUB_TOKEN }}"  # you don't need to manually set this secret. GitHub does it on your behalf
