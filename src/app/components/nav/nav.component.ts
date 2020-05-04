@@ -1,4 +1,6 @@
 import {Component, EventEmitter, OnInit, Output} from '@angular/core';
+import {UserAuthService} from '../../core/services/user-auth.service';
+import {Router, RouterModule} from '@angular/router';
 
 @Component({
   selector: 'app-nav',
@@ -28,16 +30,22 @@ export class NavComponent implements OnInit {
     {
       name: 'Взаимопомощь',
       id: 'help'
-    },
-    {
-      name: 'Личный кабинет',
-      id: 'profile'
-    },
+    }
   ]
 
-  constructor() { }
+  constructor(
+    public auth: UserAuthService,
+    private router: Router
+  ) { }
 
   ngOnInit() {
   }
 
+  logout(event: Event) {
+    event.preventDefault();
+    this.auth.logout();
+    this.onClose.emit();
+
+    this.router.navigate(['/', 'login']);
+  }
 }

@@ -3,11 +3,23 @@
 @import "src/variables";
 @import "src/assets/scss/settings";
 
+:host {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
 .nav {
-  margin: 0;
   margin-top: 70px;
-  padding: 0;
-  list-style: none;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+
+  &__list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
 
   &__item {
     background-color: $secondary-theme;
@@ -16,6 +28,12 @@
 
     &:first-child {
       border-top: 1px dashed $main-theme;
+    }
+
+    &--profile {
+      margin-top: auto;
+      border-color: transparent;
+      text-align: center;
     }
   }
 
@@ -33,6 +51,19 @@
     &:hover,
     &:active {
       transform: translateX(15px);
+    }
+
+    .nav__item--profile &:hover,
+    .nav__item--profile &:active {
+      transform: none;
+      color: $main-theme;
+    }
+
+    &--user {
+      padding: 0;
+      display: inline-block;
+      font-size: 18px;
+      text-transform: unset;
     }
   }
 }
