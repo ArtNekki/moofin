@@ -1,0 +1,7 @@
+<div class="alert" *ngIf="text"
+     [class.alert--success]="type==='success'"
+     [class.alert--warning]="type==='danger'"
+     [class.alert--error]="type==='error'"
+>
+  <span>{{ text }}</span>
+</div>

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
 import {UserAuthService} from '../../core/user-auth.service';
 import {ActivatedRoute, Params, Router} from '@angular/router';
+import {AlertService} from '../../core/alert.service';
 
 @Component({
   selector: 'app-login',
@@ -16,7 +17,8 @@ export class LoginComponent implements OnInit {
   constructor(
     private router: Router,
     private route: ActivatedRoute,
-    private auth: UserAuthService
+    private auth: UserAuthService,
+    private alert: AlertService
   ) { }
 
   ngOnInit() {
@@ -46,6 +48,7 @@ export class LoginComponent implements OnInit {
         this.form.reset();
         this.router.navigate(['/dialogs']);
         this.formSubmitted = false;
+        this.alert.success('Авторизация прошла успешно');
        },
       () => {
         this.formSubmitted = false;

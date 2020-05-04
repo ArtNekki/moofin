@@ -21,6 +21,8 @@ import { HeaderComponent } from './shared/header/header.component';
 import { NgxMaskModule, IConfig } from 'ngx-mask';
 import { NavComponent } from './shared/nav/nav.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { AlertComponent } from './shared/alert/alert.component';
+import {AlertService} from './core/alert.service';
 export const options: Partial<IConfig> | (() => Partial<IConfig>) = {};
 
 
@@ -36,7 +38,8 @@ export const options: Partial<IConfig> | (() => Partial<IConfig>) = {};
     HelpComponent,
     ProfileComponent,
     HeaderComponent,
-    NavComponent
+    NavComponent,
+    AlertComponent
   ],
   imports: [
     CommonModule,
@@ -47,7 +50,7 @@ export const options: Partial<IConfig> | (() => Partial<IConfig>) = {};
     NgxMaskModule.forRoot(options),
     // AngularSvgIconModule
   ],
-  providers: [],
+  providers: [AlertService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

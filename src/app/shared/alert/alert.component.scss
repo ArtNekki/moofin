@@ -1,0 +1,35 @@
+@import 'src/assets/scss/core/functions';
+@import "src/assets/scss/core/breakpoints";
+@import "src/variables";
+@import "src/assets/scss/settings";
+
+.alert {
+  position: fixed;
+  z-index: 10;
+  top: 60px;
+  left: 0;
+  width: 100%;
+  min-height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: $font-family;
+  font-size: 16px;
+  line-height: 18px;
+  color: $white;
+  text-align: center;
+  vertical-align: middle;
+  background-color: $gray;
+
+  &--success {
+    background-color: $green;
+  }
+
+  &--warning {
+    background-color: $yellow;
+  }
+
+  &--error {
+    background-color: $red;
+  }
+}

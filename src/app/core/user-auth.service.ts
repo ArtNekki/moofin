@@ -2,14 +2,13 @@ import { Injectable } from '@angular/core';
 import {Observable, of, Subject, throwError} from 'rxjs';
 import {HttpClient} from '@angular/common/http';
 import {catchError, tap} from 'rxjs/operators';
+import {AlertService} from './alert.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class UserAuthService {
-  public error$: Subject<string> = new Subject<string>();
-
-  constructor() { }
+  constructor(private alert: AlertService) { }
 
   get token() {
     const expDate = new Date(localStorage.getItem('user-auth-token-exp'));
@@ -36,10 +35,10 @@ export class UserAuthService {
 
     switch (message) {
       case 'INVALID_TEL':
-        this.error$.next('Пользователя с таким телефоном нет');
+        this.alert.error('Пользователя с таким телефоном нет');
         break;
       case 'INVALID_PASSWORD':
-        this.error$.next('Неверный пароль');
+        this.alert.error('Неверный пароль');
         break;
     }
 
