@@ -18,13 +18,17 @@ import { BuildingComponent } from './pages/building/building.component';
 import { PeoplesComponent } from './pages/peoples/peoples.component';
 import { ServicesComponent } from './pages/services/services.component';
 import { PostsComponent } from './pages/posts/posts.component';
+import { SubMenuComponent } from './components/sub-menu/sub-menu.component';
+import { CreatePorchComponent } from './pages/create-porch/create-porch.component';
 
 const routes = [
   { path: '', component: AdminLayoutComponent, children: [
       { path: '', redirectTo: '/admin/login', pathMatch: 'full'},
       { path: 'login', component: LoginPageComponent },
       { path: 'dashboard', component: DashboardPageComponent, canActivate: [AdminAuthGuard]},
-      { path: 'building', component: BuildingComponent, canActivate: [AdminAuthGuard]},
+      { path: 'building', component: BuildingComponent, canActivate: [AdminAuthGuard], children: [
+          { path: 'create-porch', component: CreatePorchComponent, canActivate: [AdminAuthGuard]}
+      ]},
       { path: 'people', component: PeoplesComponent, canActivate: [AdminAuthGuard]},
       { path: 'services', component: ServicesComponent, canActivate: [AdminAuthGuard]},
       { path: 'posts', component: PostsComponent, canActivate: [AdminAuthGuard]}
@@ -43,7 +47,9 @@ const routes = [
     BuildingComponent,
     PeoplesComponent,
     ServicesComponent,
-    PostsComponent
+    PostsComponent,
+    SubMenuComponent,
+    CreatePorchComponent
   ],
   imports: [
     CommonModule,

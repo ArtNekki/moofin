@@ -3,43 +3,32 @@
 @import "src/variables";
 @import "src/assets/scss/settings";
 
-.nav {
-  display: flex;
-  align-items: center;
-  flex-grow: 1;
+.sub-menu {
+  background-color: $gray-light;
 
   &__list {
     margin: 0;
     padding: 0;
+    padding: 10px 0;
     list-style: none;
-    display: flex;
+    text-align: right;
   }
 
   &__item {
+    margin: 0 10px;
     display: inline-block;
   }
 
   &__link {
-    padding: 20px 20px;
+    display: block;
     font-family: $font-family;
     font-size: 14px;
     line-height: 16px;
-    color: $white;
+    color: rgba($gray-dark, 0.5);
     text-decoration: none;
-    cursor: pointer;
 
     &--active {
-      color: $secondary-theme;
-      background-color: $gray-light;
+      color: $gray-dark;
     }
-
-    &:hover,
-    &:active {
-      opacity: 0.7;
-    }
-  }
-
-  &__profile {
-    margin-left: 60px;
   }
 }
