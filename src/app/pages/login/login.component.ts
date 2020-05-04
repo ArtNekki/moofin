@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
+import {UserAuthService} from '../../core/user-auth.service';
+import {ActivatedRoute, Params, Router} from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -8,10 +10,23 @@ import {FormControl, FormGroup, Validators} from '@angular/forms';
 })
 export class LoginComponent implements OnInit {
   form: FormGroup;
+  formSubmitted = false;
+  errorMessage;
 
-  constructor() { }
+  constructor(
+    private router: Router,
+    private route: ActivatedRoute,
+    private auth: UserAuthService
+  ) { }
 
   ngOnInit() {
+
+    this.route.queryParams.subscribe((params: Params) => {
+      // if (params['isAuth']) {
+      //   this.errorMessage = 'Пожалуйста авторизуйтесь';
+      // }
+    });
+
     this.form = new FormGroup({
       tel: new FormControl('', [Validators.required]),
       password: new FormControl('', [Validators.required])
@@ -21,7 +36,20 @@ export class LoginComponent implements OnInit {
   onSubmit() {
     if (this.form.invalid) { return; }
 
-    const formData = this.form.value;
-    console.log('formData', formData);
+    const user = this.form.value;
+    console.log('formData', user);
+
+    this.formSubmitted = true;
+
+    this.auth.login(user).subscribe(
+      () => {
+        this.form.reset();
+        this.router.navigate(['/dialogs']);
+        this.formSubmitted = false;
+       },
+      () => {
+        this.formSubmitted = false;
+      }
+    );
   }
 }
