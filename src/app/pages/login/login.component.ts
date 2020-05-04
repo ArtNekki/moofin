@@ -24,9 +24,9 @@ export class LoginComponent implements OnInit {
   ngOnInit() {
 
     this.route.queryParams.subscribe((params: Params) => {
-      // if (params['isAuth']) {
-      //   this.errorMessage = 'Пожалуйста авторизуйтесь';
-      // }
+      if (params['isNotAuth']) {
+        this.alert.danger('Необходимо авторизоваться');
+      }
     });
 
     this.form = new FormGroup({

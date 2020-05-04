@@ -23,6 +23,7 @@ import { NavComponent } from './shared/nav/nav.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { AlertComponent } from './shared/alert/alert.component';
 import {AlertService} from './core/alert.service';
+import {AuthGuard} from './core/auth.guard';
 export const options: Partial<IConfig> | (() => Partial<IConfig>) = {};
 
 
@@ -50,7 +51,7 @@ export const options: Partial<IConfig> | (() => Partial<IConfig>) = {};
     NgxMaskModule.forRoot(options),
     // AngularSvgIconModule
   ],
-  providers: [AlertService],
+  providers: [AlertService, AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

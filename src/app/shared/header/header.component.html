@@ -9,6 +9,6 @@
   </div>
   <nav class="header__nav" [@nav]="navCurrentState">
     <button type="button" class="header__nav-close" (click)="setNavState(NavState.HIDDEN)">&times;</button>
-    <app-nav></app-nav>
+    <app-nav (onClose)="setNavState(NavState.HIDDEN)"></app-nav>
   </nav>
 </header>

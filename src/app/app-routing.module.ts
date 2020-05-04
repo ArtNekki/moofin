@@ -8,17 +8,18 @@ import {ServicesComponent} from './pages/services/services.component';
 import {HelpComponent} from './pages/help/help.component';
 import {ProfileComponent} from './pages/profile/profile.component';
 import {LoginComponent} from './pages/login/login.component';
+import {AuthGuard} from './core/auth.guard';
 
 const routes: Routes = [
   { path: '', component: MainLayoutComponent, children: [
       { path: '', redirectTo: '/login', pathMatch: 'full' },
       { path: 'login', component: LoginComponent },
-      { path: 'dialogs', component: DialogsComponent },
-      { path: 'posts', component: PostsComponent },
-      { path: 'notifications', component: NotificationsComponent },
-      { path: 'services', component: ServicesComponent },
-      { path: 'help', component: HelpComponent },
-      { path: 'profile', component: ProfileComponent }
+      { path: 'dialogs', component: DialogsComponent, canActivate: [AuthGuard]},
+      { path: 'posts', component: PostsComponent, canActivate: [AuthGuard] },
+      { path: 'notifications', component: NotificationsComponent, canActivate: [AuthGuard] },
+      { path: 'services', component: ServicesComponent, canActivate: [AuthGuard] },
+      { path: 'help', component: HelpComponent, canActivate: [AuthGuard] },
+      { path: 'profile', component: ProfileComponent, canActivate: [AuthGuard] }
   ]},
   {
     path: 'admin', loadChildren: () => import('./admin/admin.module').then((m) => m.AdminModule)
