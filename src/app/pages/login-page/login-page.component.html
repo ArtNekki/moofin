@@ -1,5 +1,6 @@
 <div class="login-page">
   <div class="login-page__container container">
+    <div *ngIf="message" class="login-page__info">Необходимо авторизоваться</div>
     <h1 class="login-page__title">Вход</h1>
     <form class="form" autocomplete="off" [formGroup]="form" (ngSubmit)="onSubmit()">
       <div class="form__field" [class.form__field--invalid]="form.get('tel').invalid && form.get('tel').touched">

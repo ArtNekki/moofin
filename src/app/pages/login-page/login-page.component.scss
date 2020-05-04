@@ -8,7 +8,9 @@
   background-color: $white;
 
   &__container {
-    margin-top: 100px;
+    position: relative;
+    margin-top: 50px;
+    padding-top: 50px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -21,6 +23,21 @@
     font-size: 35px;
     line-height: 34px;
     color: $gray-dark;
+    text-align: center;
+  }
+
+  &__info {
+    position: absolute;
+    top: -50px;
+    left: 0;
+    right: 0;
+    width: 100%;
+    min-height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: $white;
+    background-color: $yellow;
     text-align: center;
   }
 }

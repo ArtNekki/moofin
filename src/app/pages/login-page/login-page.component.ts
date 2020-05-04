@@ -12,7 +12,7 @@ import {AlertService} from '../../core/services/alert.service';
 export class LoginPageComponent implements OnInit {
   form: FormGroup;
   formSubmitted = false;
-  errorMessage;
+  message;
 
   constructor(
     private router: Router,
@@ -25,7 +25,9 @@ export class LoginPageComponent implements OnInit {
 
     this.route.queryParams.subscribe((params: Params) => {
       if (params['isNotAuth']) {
-        this.alert.danger('Необходимо авторизоваться');
+        this.message = 'Необходимо авторизоваться';
+      } else {
+        this.message = null;
       }
     });
 
