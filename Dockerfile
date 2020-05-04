@@ -7,7 +7,7 @@ WORKDIR /app
 COPY ./package.json .
 RUN npm install
 COPY . .
-RUN npx ng build --prod
+RUN npx ng build --prod && cp ./dist/fincase-unicorn-web/index.html ./dist/fincase-unicorn-web/404.html
 
 FROM base AS final
 WORKDIR /app
