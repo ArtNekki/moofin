@@ -1,15 +1,15 @@
 import { Component, OnInit } from '@angular/core';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
-import {UserAuthService} from '../../core/user-auth.service';
+import {UserAuthService} from '../../core/services/user-auth.service';
 import {ActivatedRoute, Params, Router} from '@angular/router';
-import {AlertService} from '../../core/alert.service';
+import {AlertService} from '../../core/services/alert.service';
 
 @Component({
   selector: 'app-login',
-  templateUrl: './login.component.html',
-  styleUrls: ['./login.component.scss']
+  templateUrl: './login-page.component.html',
+  styleUrls: ['./login-page.component.scss']
 })
-export class LoginComponent implements OnInit {
+export class LoginPageComponent implements OnInit {
   form: FormGroup;
   formSubmitted = false;
   errorMessage;
