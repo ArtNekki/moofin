@@ -14,8 +14,9 @@ on:
   pull_request:
 
 env:
-  IMAGE_NAME: fincase-unicorn-team/dom-app/web
-  VERSION: latest
+  IMAGE_NAME: dom-app
+  IMAGE_ID:
+  VERSION:
 
 jobs:
   # Push image to GitHub Packages.
@@ -30,6 +31,11 @@ jobs:
 
       - name: Set version
         run: |
+          IMAGE_ID=${{ github.repository }}/$IMAGE_NAME
+          
+          # Change all uppercase to lowercase
+          IMAGE_ID=$(echo $IMAGE_ID | tr '[A-Z]' '[a-z]')
+        
           # Strip git ref prefix from version
           VERSION=$(echo "${{ github.ref }}" | sed -e 's,.*/\(.*\),\1,')
           
@@ -39,15 +45,16 @@ jobs:
           # Use Docker `latest` tag convention
           [ "$VERSION" == "master" ] && VERSION=latest
           
-          echo "::set-env name=action_state::yellow"
+          echo "::set-env name=IMAGE_ID::$IMAGE_ID"
+          echo "::set-env name=VERSION::$VERSION"
           
-          echo IMAGE_NAME=$IMAGE_NAME
+          echo IMAGE_ID=$IMAGE_ID
           echo VERSION=$VERSION
       
       - name: Push image
         uses: whoan/docker-build-with-cache-action@v5
         with:
-          image_name: ${{ env.IMAGE_NAME }}
+          image_name: ${{ env.IMAGE_ID }}
           image_tag: ${{ env.VERSION }}
           registry: docker.pkg.github.com
           username: ${{ github.actor }}
