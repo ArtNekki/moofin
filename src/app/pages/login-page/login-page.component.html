@@ -5,7 +5,7 @@
     <form class="form" autocomplete="off" [formGroup]="form" (ngSubmit)="onSubmit()">
       <div class="form__field" [class.form__field--invalid]="form.get('tel').invalid && form.get('tel').touched">
         <label for="tel" class="form__label">Телефон</label>
-        <input id="tel" type="text" class="input" formControlName="tel" mask="(000) 000-0000" prefix="+7">
+        <input id="tel" type="tel" class="input" formControlName="tel" mask="(000) 000-0000" prefix="+7">
         <div class="form__validation" *ngIf="form.get('tel').invalid && form.get('tel').touched">
           <small *ngIf="form.get('tel').errors.required">Это поле не может быть пустым</small>
           <small *ngIf="form.get('tel').errors.mask">Телефон указан некорректно</small>
@@ -13,7 +13,7 @@
       </div>
       <div class="form__field" [class.form__field--invalid]="form.get('password').invalid && form.get('password').touched">
         <label for="password" class="form__label">Пароль</label>
-        <input id="password" type="text" class="input" formControlName="password">
+        <input #passInput id="password" type="password" class="input" formControlName="password" autocomplete="false" placeholder="•••••••" readonly (focus)="passInput.removeAttribute('readonly')">
         <div class="form__validation" *ngIf="form.get('password').invalid && form.get('password').touched">
           <small *ngIf="form.get('password').errors.required">Это поле не может быть пустым</small>
         </div>

@@ -94,4 +94,8 @@
     flex-direction: column;
     background-color: $secondary-theme;
   }
+
+  &__logo {
+    display: block;
+  }
 }

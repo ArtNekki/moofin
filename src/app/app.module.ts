@@ -1,8 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import {CommonModule} from '@angular/common';
-// import {AngularSvgIconModule} from 'angular-svg-icon';
-
+import {InlineSVGModule} from 'ng-inline-svg';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -18,13 +17,15 @@ import {ReactiveFormsModule} from '@angular/forms';
 import { HeaderComponent } from './components/header/header.component';
 
 // mask
-// import { NgxMaskModule, IConfig } from 'ngx-mask';
+import { NgxMaskModule, IConfig } from 'ngx-mask';
+export const options: Partial<IConfig> | (() => Partial<IConfig>) = {};
+
 import { NavComponent } from './components/nav/nav.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { AlertComponent } from './components/alert/alert.component';
 import {AlertService} from './core/services/alert.service';
 import {UserAuthGuard} from './core/user-auth.guard';
-// export const options: Partial<IConfig> | (() => Partial<IConfig>) = {};
+import {HttpClientModule} from '@angular/common/http';
 
 
 @NgModule({
@@ -45,11 +46,12 @@ import {UserAuthGuard} from './core/user-auth.guard';
   imports: [
     CommonModule,
     BrowserModule,
+    HttpClientModule,
     BrowserAnimationsModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    // NgxMaskModule.forRoot(options),
-    // AngularSvgIconModule
+    InlineSVGModule.forRoot(),
+    NgxMaskModule.forRoot(options),
   ],
   providers: [AlertService, UserAuthGuard],
   bootstrap: [AppComponent]
