@@ -1,5 +1,5 @@
 ## Web приложение
-![Docker](https://github.com/fincase-unicorn-team/web/workflows/Docker/badge.svg)
+![Deploy](https://github.com/fincase-unicorn-team/web/workflows/Deploy/badge.svg)
 
 Сайт для жильцов http://dom-app.ru/
 
