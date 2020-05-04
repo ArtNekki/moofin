@@ -67,4 +67,13 @@
       text-transform: unset;
     }
   }
+
+  &__btn {
+    margin-top: 70px;
+    padding: 30px 40px;
+    font-size: 20px;
+    align-self: center;
+    background-color: $main-theme;
+    box-shadow: 0 0 15px rgba($gray-dark, 0.1);
+  }
 }
