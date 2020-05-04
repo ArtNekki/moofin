@@ -43,6 +43,10 @@ body {
   line-height: 19px;
 }
 
+h2 {
+  margin-bottom: 30px;
+}
+
 //components
 @import "assets/scss/components/link";
 @import "assets/scss/components/input";
