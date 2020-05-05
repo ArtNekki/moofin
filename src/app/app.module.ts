@@ -28,6 +28,7 @@ import {UserAuthGuard} from './core/user-auth.guard';
 import {HttpClientModule} from '@angular/common/http';
 import { HousePlanComponent } from './components/house-plan/house-plan.component';
 import { NeighborsComponent } from './pages/neighbors/neighbors.component';
+import { ComonQuestionsDiscussComponent } from './pages/comon-questions-discuss/comon-questions-discuss.component';
 
 
 @NgModule({
@@ -45,7 +46,8 @@ import { NeighborsComponent } from './pages/neighbors/neighbors.component';
     NavComponent,
     AlertComponent,
     HousePlanComponent,
-    NeighborsComponent
+    NeighborsComponent,
+    ComonQuestionsDiscussComponent
   ],
   imports: [
     CommonModule,
