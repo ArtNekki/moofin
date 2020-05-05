@@ -42,6 +42,15 @@
       border-color: $red;
     }
   }
+
+  &:disabled {
+    background-color: $gray-light;
+
+    &:hover {
+      border-color: $gray;
+    }
+  }
+
 }
 
 textarea.input {
