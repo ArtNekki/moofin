@@ -26,7 +26,6 @@ import { AlertComponent } from './components/alert/alert.component';
 import {AlertService} from './core/services/alert.service';
 import {UserAuthGuard} from './core/user-auth.guard';
 import {HttpClientModule} from '@angular/common/http';
-import {SharedModule} from './shared.module';
 import { HousePlanComponent } from './components/house-plan/house-plan.component';
 import { NeighborsComponent } from './pages/neighbors/neighbors.component';
 
@@ -55,7 +54,6 @@ import { NeighborsComponent } from './pages/neighbors/neighbors.component';
     BrowserAnimationsModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    // SharedModule,
     InlineSVGModule.forRoot(),
     NgxMaskModule.forRoot(options),
   ],
