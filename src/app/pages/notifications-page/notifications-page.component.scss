@@ -1,0 +1,46 @@
+@import 'src/assets/scss/core/functions';
+@import "src/assets/scss/core/breakpoints";
+@import "src/variables";
+@import "src/assets/scss/settings";
+
+.notifications {
+
+  &__list {
+
+  }
+
+  &__item {
+    padding: 10px 15px;
+    display: flex;
+    align-items: center;
+    font-family: $font-family;
+    font-size: 14px;
+    line-height: 16px;
+    color: $gray-dark;
+
+    &:nth-child(even):not(&--danger):not(&--warning) {
+      background-color: $gray-light;
+    }
+
+    &--danger {
+      background-color: $red;
+      color: $white
+    }
+
+    &--warning {
+      background-color: $yellow;
+      color: $white;
+    }
+  }
+
+  &__date {
+    margin-right: 15px;
+    flex-basis: 10%;
+    flex-shrink: 0;
+  }
+
+  &__content {
+    flex-basis: 80%;
+    flex-grow: 1;
+  }
+}

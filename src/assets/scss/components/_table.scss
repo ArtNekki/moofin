@@ -4,4 +4,24 @@
   font-size: 14px;
   line-height: 16px;
   color: rgba($gray-dark, 0.5);
+
+  tr:nth-child(even) {
+    background: $gray-light;
+  }
+
+  td {
+    padding: 10px 15px;
+
+    &:first-child {
+      padding-right: 10px;
+    }
+  }
+
+  a {
+    font-family: $font-family;
+    font-size: 14px;
+    line-height: 16px;
+    color: $gray-dark;
+    text-decoration: none;
+  }
 }

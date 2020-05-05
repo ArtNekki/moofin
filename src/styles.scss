@@ -75,6 +75,13 @@ h2 {
   }
 }
 
+.page-heading {
+  font-family: $font-family;
+  font-size: 25px;
+  line-height: 30px;
+  color: $gray-dark;
+}
+
 //components
 @import "assets/scss/components/link";
 @import "assets/scss/components/input";
