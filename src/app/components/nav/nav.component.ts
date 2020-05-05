@@ -30,6 +30,10 @@ export class NavComponent implements OnInit {
     {
       name: 'Взаимопомощь',
       id: 'help'
+    },
+    {
+      name: 'Соседи',
+      id: 'heighbors'
     }
   ]
 

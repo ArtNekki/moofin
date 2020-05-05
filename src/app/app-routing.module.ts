@@ -9,6 +9,7 @@ import {ServicesPageComponent} from './pages/services-page/services-page.compone
 import {PostsPageComponent} from './pages/posts-page/posts-page.component';
 import {NotificationsPageComponent} from './pages/notifications-page/notifications-page.component';
 import {ProfilePageComponent} from './pages/profile-page/profile-page.component';
+import {NeighborsComponent} from './pages/neighbors/neighbors.component';
 
 const routes: Routes = [
   { path: '', component: MainLayoutComponent, children: [
@@ -19,6 +20,7 @@ const routes: Routes = [
       { path: 'notifications', component: NotificationsPageComponent, canActivate: [UserAuthGuard] },
       { path: 'services', component: ServicesPageComponent, canActivate: [UserAuthGuard] },
       { path: 'help', component: HelpPageComponent, canActivate: [UserAuthGuard] },
+      { path: 'heighbors', component: NeighborsComponent, canActivate: [UserAuthGuard] },
       { path: 'profile', component: ProfilePageComponent, canActivate: [UserAuthGuard] }
   ]},
   {

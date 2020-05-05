@@ -11,7 +11,6 @@ import { DashboardPageComponent } from './pages/dashboard-page/dashboard-page.co
 import {UserAuthGuard} from '../core/user-auth.guard';
 import {AlertService} from '../core/services/alert.service';
 import {AlertComponent} from '../components/alert/alert.component';
-import {SharedModule} from '../shared.module';
 import { NavComponent } from './components/nav/nav.component';
 import {AdminAuthGuard} from './core/admin-auth.guard';
 import { BuildingComponent } from './pages/building/building.component';

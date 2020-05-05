@@ -27,6 +27,8 @@ import {AlertService} from './core/services/alert.service';
 import {UserAuthGuard} from './core/user-auth.guard';
 import {HttpClientModule} from '@angular/common/http';
 import {SharedModule} from './shared.module';
+import { HousePlanComponent } from './components/house-plan/house-plan.component';
+import { NeighborsComponent } from './pages/neighbors/neighbors.component';
 
 
 @NgModule({
@@ -42,7 +44,9 @@ import {SharedModule} from './shared.module';
     ProfilePageComponent,
     HeaderComponent,
     NavComponent,
-    AlertComponent
+    AlertComponent,
+    HousePlanComponent,
+    NeighborsComponent
   ],
   imports: [
     CommonModule,
