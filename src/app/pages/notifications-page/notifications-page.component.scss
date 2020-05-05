@@ -6,7 +6,13 @@
 .notifications {
 
   &__list {
+    margin-left: -15px;
+    margin-right: -15px;
 
+    @include media-breakpoint-up(md) {
+      margin-left: 0;
+      margin-right: 0;
+    }
   }
 
   &__item {
@@ -35,7 +41,7 @@
 
   &__date {
     margin-right: 15px;
-    flex-basis: 10%;
+    flex-basis: 80px;
     flex-shrink: 0;
   }
 
