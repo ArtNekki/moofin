@@ -16,7 +16,7 @@ export class NavComponent implements OnInit {
       id: 'dialogs'
     },
     {
-      name: 'Посты',
+      name: 'Общие вопросы',
       id: 'posts'
     },
     {
