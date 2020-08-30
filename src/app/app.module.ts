@@ -20,6 +20,8 @@ import {UserAuthGuard} from './core/user-auth.guard';
 import {HttpClientModule} from '@angular/common/http';
 import { HomePageComponent } from './pages/home-page/home-page.component';
 import {SERVICES} from './core/services';
+import {SimpleModalModule} from 'ngx-simple-modal';
+import { DialogGoodsComponent } from './components/dialog-goods/dialog-goods.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +29,8 @@ import {SERVICES} from './core/services';
     MainLayoutComponent,
     LoginPageComponent,
     AlertComponent,
-    HomePageComponent
+    HomePageComponent,
+    DialogGoodsComponent
   ],
   imports: [
     CommonModule,
@@ -37,8 +40,10 @@ import {SERVICES} from './core/services';
     AppRoutingModule,
     ReactiveFormsModule,
     InlineSVGModule.forRoot(),
+    SimpleModalModule.forRoot({container: 'modal-container'}),
     NgxMaskModule.forRoot(options),
   ],
+  entryComponents: [DialogGoodsComponent],
   providers: [AlertService, UserAuthGuard, ...SERVICES],
   bootstrap: [AppComponent]
 })
