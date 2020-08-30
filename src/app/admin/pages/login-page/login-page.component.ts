@@ -49,7 +49,7 @@ export class LoginPageComponent implements OnInit {
     this.auth.login(user).subscribe(
       () => {
         this.form.reset();
-        this.router.navigate(['/admin/building/create-porch']);
+        this.router.navigate(['admin/home']);
         this.formSubmitted = false;
         this.alert.success('Авторизация прошла успешно');
       },
