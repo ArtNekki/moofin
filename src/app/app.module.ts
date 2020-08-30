@@ -19,6 +19,7 @@ import {AlertService} from './core/services/alert.service';
 import {UserAuthGuard} from './core/user-auth.guard';
 import {HttpClientModule} from '@angular/common/http';
 import { HomePageComponent } from './pages/home-page/home-page.component';
+import {SERVICES} from './core/services';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,7 @@ import { HomePageComponent } from './pages/home-page/home-page.component';
     InlineSVGModule.forRoot(),
     NgxMaskModule.forRoot(options),
   ],
-  providers: [AlertService, UserAuthGuard],
+  providers: [AlertService, UserAuthGuard, ...SERVICES],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
