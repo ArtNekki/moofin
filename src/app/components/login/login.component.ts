@@ -6,10 +6,10 @@ import {AlertService} from '../../core/services/alert.service';
 
 @Component({
   selector: 'app-login',
-  templateUrl: './login-page.component.html',
-  styleUrls: ['./login-page.component.scss']
+  templateUrl: './login.component.html',
+  styleUrls: ['./login.component.scss']
 })
-export class LoginPageComponent implements OnInit {
+export class LoginComponent implements OnInit {
   form: FormGroup;
   formSubmitted = false;
   message;
