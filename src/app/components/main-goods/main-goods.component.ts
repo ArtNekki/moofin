@@ -1,6 +1,6 @@
-import {AfterViewInit, Component, ElementRef, OnInit, ViewChild} from '@angular/core';
+import {AfterViewInit, Component, ElementRef, Input, OnInit, ViewChild} from '@angular/core';
 import Swiper, {SwiperOptions} from 'swiper';
-import { of } from 'rxjs';
+import {Observable, of} from 'rxjs';
 
 @Component({
   selector: 'app-main-goods',
@@ -9,43 +9,15 @@ import { of } from 'rxjs';
 })
 export class MainGoodsComponent implements OnInit {
   @ViewChild('slider', {read: ElementRef, static: false}) slider: ElementRef;
-  // @ViewChild('sliderWrapper', {read: ElementRef, static: false}) sliderWrapper: ElementRef;
-
-   data = of([{title: 'Title 1'}, {title: 'Title 2'}, {title: 'Title 3'}, {title: 'Title 4'}, {title: 'Title 5'}, {title: 'Title 6'}]);
+  @ViewChild('btnLeft', {read: ElementRef, static: false}) btnLeft: ElementRef;
+  @ViewChild('btnRight', {read: ElementRef, static: false}) btnRight: ElementRef;
+  @Input() data: Observable<[]>;
 
   items;
   swiper: Swiper;
   itemsLoading: boolean;
 
-  config: SwiperOptions = {
-    slidesPerView: 1,
-    spaceBetween: 0,
-    breakpointsInverse: true,
-    // autoplay: {
-    //   delay: 2000,
-    //   stopOnLastSlide: false,
-    //   disableOnInteraction: true
-    // },
-    // loop: true,
-    breakpoints: {
-      ['576']: {
-        slidesPerView: 2,
-        spaceBetween: 14
-      },
-      ['820']: {
-        slidesPerView: 3,
-        spaceBetween: 14
-      }
-    },
-    pagination: {
-      el: '#services-pagination',
-      clickable: true
-    },
-    navigation: {
-      nextEl: '#services-btn-right',
-      prevEl: '#services-btn-left',
-    },
-  };
+  config: SwiperOptions;
 
 
   constructor() { }
@@ -59,10 +31,38 @@ export class MainGoodsComponent implements OnInit {
   }
 
   initSwiper() {
-    console.log('slider', this.slider)
+    console.log('slider', this.btnLeft)
 
     if (!this.swiper || !this.swiper.initialized) {
-      this.swiper = new Swiper(this.slider.nativeElement, this.config);
+      this.swiper = new Swiper(this.slider.nativeElement, {
+        slidesPerView: 1,
+        spaceBetween: 0,
+        breakpointsInverse: true,
+        // autoplay: {
+        //   delay: 2000,
+        //   stopOnLastSlide: false,
+        //   disableOnInteraction: true
+        // },
+        // loop: true,
+        breakpoints: {
+          ['576']: {
+            slidesPerView: 2,
+            spaceBetween: 14
+          },
+          ['820']: {
+            slidesPerView: 3,
+            spaceBetween: 14
+          }
+        },
+        pagination: {
+          el: '#services-pagination',
+          clickable: true
+        },
+        navigation: {
+          nextEl: this.btnLeft.nativeElement,
+          prevEl: this.btnRight.nativeElement,
+        },
+      });
 
       console.log('swiper', this.swiper);
     }

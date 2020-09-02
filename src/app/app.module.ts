@@ -29,6 +29,8 @@ import {NgSelectModule} from '@ng-select/ng-select';
 import { NgSelectConfig } from '@ng-select/ng-select';
 import { ɵs } from '@ng-select/ng-select';
 import { GoodsCardComponent } from './components/goods-card/goods-card.component';
+import { BedsSectionComponent } from './components/beds-section/beds-section.component';
+import { DecorSectionComponent } from './components/decor-section/decor-section.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +38,9 @@ import { GoodsCardComponent } from './components/goods-card/goods-card.component
     MainLayoutComponent,
     ...COMPONENTS,
     ...CONTROLS,
-    GoodsCardComponent
+    GoodsCardComponent,
+    BedsSectionComponent,
+    DecorSectionComponent
   ],
   imports: [
     CommonModule,
