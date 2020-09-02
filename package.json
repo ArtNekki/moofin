@@ -28,9 +28,11 @@
     "ngx-device-detector": "^1.4.2",
     "ngx-mask": "^8.1.0",
     "ngx-simple-modal": "^1.4.13",
+    "ngx-swiper-wrapper": "^9.0.1",
     "normalize.css": "^8.0.1",
     "npm": "^6.14.8",
     "rxjs": "~6.4.0",
+    "swiper": "^5.3.6",
     "tslib": "^1.10.0",
     "zone.js": "~0.9.1"
   },

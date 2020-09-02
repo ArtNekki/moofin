@@ -1,0 +1,244 @@
+@import 'src/assets/scss/core/functions';
+@import "src/assets/scss/core/breakpoints";
+@import "src/variables";
+@import "src/assets/scss/settings";
+
+.nav {
+  min-height: 60px;
+
+  @include media-breakpoint-up(sm) {
+    min-height: 70px;
+  }
+
+ &-logo {
+   position: relative;
+   top: 3px;
+   font-family: $font-family;
+   font-size: 23px;
+   font-weight: 700;
+   line-height: 26px;
+   color: $gray-dark;
+   text-decoration: none;
+   //letter-spacing: -1px;
+
+   &:hover {
+     opacity: 0.8;
+   }
+
+   ::ng-deep svg {
+     width: 50px;
+     fill: $gray-dark;
+
+     //.nav--sticky & {
+     //  fill: $yellow;
+     //}
+   }
+ }
+
+ &-content {
+   position: relative;
+   //margin-top: 0;
+   margin-bottom: 20px;
+   transition: all 0.2s ease-in;
+
+   @include media-breakpoint-up(sm) {
+     margin-top: 0;
+   }
+
+   .nav--sticky & {
+     position: fixed;
+     z-index: 20;
+     width: 100%;
+     background: $white;
+     box-shadow: 0 0 10px 0 rgba($gray-dark, 0.3);
+   }
+ }
+
+  &-inner {
+    min-height: 60px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    @include media-breakpoint-up(md) {
+      min-height: auto;
+    }
+  }
+
+  &-mobile {
+    position: fixed;
+    z-index: 100;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding-top: 40px;
+    display: none;
+    background: $white;
+
+    ::ng-deep .menu-opened & {
+      display: block;
+    }
+
+    @include media-breakpoint-up(md) {
+      position: relative;
+      top: -2px;
+      padding: 0;
+      display: block;
+      background: none;
+    }
+  }
+
+  &-list {
+    margin: 0;
+    margin-top: 20px;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    //justify-content: center;
+    list-style-type: none;
+
+    @include media-breakpoint-up(md) {
+      margin-top: 0;
+      flex-direction: row;
+      justify-content: center;
+    }
+
+  }
+
+  &-item {
+    border-top: 1px dashed $gray;
+
+    @include media-breakpoint-up(md) {
+      padding: 25px 10px;
+      border: none;
+    }
+
+    &:last-child {
+      border-bottom: 1px dashed $gray;
+
+      @include media-breakpoint-up(md) {
+        border: none;
+      }
+    }
+  }
+
+  &-link {
+    padding: 10px 20px;
+    display: block;
+    font-size: 14px;
+    color: $gray-dark;
+    text-decoration: none;
+
+    @include media-breakpoint-up(md) {
+      padding: 0;
+    }
+
+    &:hover {
+      color: $white;
+    }
+
+    .nav-item-active & {
+      color: $white;
+    }
+
+    .nav-item-active &:hover {
+      cursor: default;
+    }
+
+    .nav--sticky  &:hover {
+      color: $yellow;
+    }
+
+    .nav--sticky .nav-item-active & {
+      color: $yellow;
+    }
+
+    ::ng-deep .menu-opened &:hover {
+      color: $yellow;
+    }
+
+    ::ng-deep .menu-opened .nav-item-active & {
+      color: $yellow;
+    }
+  }
+
+  &-open {
+    padding: 0;
+    width: 30px;
+    height: 30px;
+    background: none;
+    border: none;
+
+    &:focus {
+      outline: none;
+    }
+
+    span {
+      position: relative;
+      display: block;
+      width: 100%;
+      height: 5px;
+      background: $white;
+
+      .nav--sticky & {
+        background: $yellow;
+      }
+
+      &::before,
+      &::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        height: 5px;
+        width: 100%;
+        background: $white;
+
+        .nav--sticky & {
+          background: $yellow;
+        }
+      }
+
+      &::before {
+        top: -10px;
+      }
+
+      &:after {
+        top: 10px;
+      }
+    }
+
+    @include media-breakpoint-up(md) {
+      display: none;
+    }
+  }
+
+  &-close {
+    position: absolute;
+    z-index: 101;
+    top: 0;
+    right: 15px;
+    margin: 0;
+    padding: 0;
+    font-size: 50px;
+    color: $yellow;
+    border: none;
+    background: none;
+    cursor: pointer;
+
+    &:focus {
+      outline: none;
+    }
+
+    @include media-breakpoint-up(md) {
+      display: none;
+    }
+  }
+}
+
+
+
+
+
+

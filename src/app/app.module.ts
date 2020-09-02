@@ -28,13 +28,15 @@ import {AngularMyDatePickerModule} from 'angular-mydatepicker';
 import {NgSelectModule} from '@ng-select/ng-select';
 import { NgSelectConfig } from '@ng-select/ng-select';
 import { ɵs } from '@ng-select/ng-select';
+import { GoodsCardComponent } from './components/goods-card/goods-card.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MainLayoutComponent,
     ...COMPONENTS,
-    ...CONTROLS
+    ...CONTROLS,
+    GoodsCardComponent
   ],
   imports: [
     CommonModule,

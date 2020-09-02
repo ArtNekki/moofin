@@ -2,6 +2,7 @@
 /* You can add utils styles to this file, and also import other style files */
 
 @charset 'utf-8';
+@import '~swiper/css/swiper.css';
 
 //core
 @import 'assets/scss/core/functions';
@@ -93,3 +94,4 @@ h2 {
 @import "assets/scss/components/table";
 @import "assets/scss/components/header";
 @import "assets/scss/components/my-datepicker";
+@import "assets/scss/components/page-section";

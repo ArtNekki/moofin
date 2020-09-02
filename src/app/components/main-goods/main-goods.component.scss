@@ -1,0 +1,120 @@
+@import 'src/assets/scss/core/functions';
+@import "src/assets/scss/core/breakpoints";
+@import "src/variables";
+@import "src/assets/scss/settings";
+
+.swiper {
+  position: relative;
+
+  &-pagination {
+    margin-top: 5px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+
+    @include media-breakpoint-up(xl) {
+      display: none;
+    }
+
+    .page-section--features & {
+      @include media-breakpoint-up(lg) {
+        display: none;
+      }
+    }
+  }
+
+  &-pagination-bullet {
+    margin: 15px 5px 10px 5px;
+    width: 12px;
+    height: 12px;
+
+    &-active {
+      background-color: $yellow;
+      box-shadow: 0 2px 5px 0 rgba($black, 0.3);
+    }
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  &-btn {
+    position: absolute;
+    z-index: 10;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 40px;
+    height: 40px;
+    display: none;
+    font-size: 0;
+    background: none;
+    border: 3px solid $gray;
+    border-bottom-color: transparent;
+    //opacity: 0.1;
+    transition: all 0.1s ease-in;
+    cursor: pointer;
+
+    @include media-breakpoint-up(xl) {
+      display: block;
+    }
+
+    &:hover {
+      //opacity: 0.3;
+    }
+
+    &:active {
+      top: calc(50% + 2px);
+    }
+
+    &:focus {
+      outline: none;
+    }
+
+    &--left {
+      left: -50px;
+      border-right-color: transparent;
+      transform: rotate3d(0, 0, 1, -45deg);
+
+      &:hover {
+        border-color: $yellow;
+        border-right-color: transparent;
+        border-bottom-color: transparent;
+      }
+
+      &.swiper-button-disabled:hover {
+        border-color: $gray;
+        border-right-color: transparent;
+        border-bottom-color: transparent;
+        cursor: not-allowed;
+      }
+
+      &.swiper-button-disabled:active {
+        top: 50%;
+      }
+    }
+
+    &--right {
+      right: -50px;
+      border-left-color: transparent;
+      transform: rotate3d(0, 0, 1, 45deg);
+
+      &:hover {
+        border-color: $yellow;
+        border-left-color: transparent;
+        border-bottom-color: transparent;
+      }
+
+      &.swiper-button-disabled:hover {
+        border-color: $gray;
+        border-left-color: transparent;
+        border-bottom-color: transparent;
+        cursor: not-allowed;
+      }
+
+      &.swiper-button-disabled:active {
+        top: 50%;
+      }
+    }
+
+  }
+}

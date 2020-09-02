@@ -1,0 +1,13 @@
+<div #sliderWrapper class="main-goods swiper" [class.swiper--loading]="itemsLoading">
+  <div #slider class="swiper-container">
+    <div class="swiper-wrapper">
+      <div *ngFor="let item of items" class="swiper-slide">
+        <app-goods-card [title]="item.title"></app-goods-card>
+      </div>
+    </div>
+  </div>
+  <div id="services-pagination" class="swiper-pagination"></div>
+  <button id="services-btn-left" class="swiper-btn swiper-btn--left">&nbsp;</button>
+  <button id="services-btn-right" class="swiper-btn swiper-btn--right">&nbsp;</button>
+<!--  <app-loader *ngIf="itemsLoading" class="loader&#45;&#45;absolute"></app-loader>-->
+</div>

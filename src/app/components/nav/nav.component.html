@@ -1,0 +1,38 @@
+<nav class="nav" [class.nav--sticky]="isSticky" #nav>
+  <div class="nav-content">
+    <div class="nav-inner container">
+      <a routerLink='.' fragment="header" class="nav-logo">
+<!--        <svg-icon [src]="'/assets/img/svg/logo.svg'" class="feature-card-icon"></svg-icon>-->
+      </a>
+      <div class="nav-mobile">
+        <ul class="nav-list">
+          <li class="nav-item" [class.nav-item-active]="currentFragment === 'transport'">
+            <a routerLink='.' fragment='transport' class="nav-link" (click)="closeMenu()">Сумки</a>
+          </li>
+          <li class="nav-item" [class.nav-item-active]="currentFragment === 'services'">
+            <a routerLink='.' fragment='services' class="nav-link" (click)="closeMenu()">Лежанки</a>
+          </li>
+          <li class="nav-item" [class.nav-item-active]="currentFragment === 'materials'">
+            <a routerLink='.' fragment='materials' class="nav-link" (click)="closeMenu()">Интерьер</a>
+          </li>
+          <li class="nav-item" [class.nav-item-active]="currentFragment === 'about'">
+            <a routerLink='.' fragment='about' class="nav-link" (click)="closeMenu()">Декор</a>
+          </li>
+          <li class="nav-item" [class.nav-item-active]="currentFragment === 'features'">
+            <a routerLink='.' fragment='features' class="nav-link" (click)="closeMenu()">Обо мне</a>
+          </li>
+          <li class="nav-item" [class.nav-item-active]="currentFragment === 'price'">
+            <a routerLink='.' fragment='price' class="nav-link" (click)="closeMenu()">Мастер-классы</a>
+          </li>
+<!--          <li class="nav-item" [class.nav-item-active]="currentFragment === 'contacts'">-->
+<!--            <a routerLink='.' fragment='contacts' class="nav-link" (click)="closeMenu()">Контакты</a>-->
+<!--          </li>-->
+        </ul>
+        <button class="nav-close" (click)="closeMenu()">&times;</button>
+      </div>
+      <button class="nav-open" (click)="openMenu()">
+        <span></span>
+      </button>
+    </div>
+  </div>
+</nav>
